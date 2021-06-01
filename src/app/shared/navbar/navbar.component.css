@@ -1,0 +1,14 @@
+.spacer
+{
+    flex:1 1 auto;
+}
+#createButton
+{
+   margin-left: 5% ;
+    background-color: aqua;
+}
+#title
+{
+    outline: none;
+    cursor: pointer;
+}

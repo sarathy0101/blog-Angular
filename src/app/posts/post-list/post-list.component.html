@@ -1,0 +1,8 @@
+<p>post-list workss!</p>
+
+    <div *ngFor="let post of posts">
+        <h2 routerLink="{{post.id}}">{{post.data.title}}</h2>
+        <p>{{post.data.content}}</p>
+        <p>{{post.data.published}}</p>
+    </div>
+    

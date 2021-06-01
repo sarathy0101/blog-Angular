@@ -1,0 +1,20 @@
+section{
+    width:70%;
+    margin :2em auto;
+    border:2px solid #e9e9e8;
+    padding:2em;
+}
+mat-form-field
+{
+    width:100%;
+    margin-bottom:1em;
+}
+button
+{
+    margin-top:2em auto;
+}
+img{
+    width: 70%;
+    height: 50vh;
+    margin-left:15%;
+}

@@ -1,0 +1,6 @@
+<p>post-detail works!</p>
+<div *ngIf="posts">
+   <h3>{{posts.title}}</h3>
+   <p>{{posts.content}}</p>
+   <p>published by {{posts.published.toDate() | date:'dd/MM/YYYY h:mm:ss a'}} </p>
+</div>
