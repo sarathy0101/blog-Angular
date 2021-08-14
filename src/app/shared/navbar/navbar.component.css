@@ -10,5 +10,7 @@
 #title
 {
     outline: none;
+    font-family: arial, sans-serif;
     cursor: pointer;
+    color: rgb(51, 9, 202);
 }

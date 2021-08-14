@@ -1,0 +1,21 @@
+<section *ngIf="posts">
+    <h2 class="header">{{posts.companyName}} - Interview Process</h2>
+    <div class="detail">
+        <mat-card>
+    <table class="companies-detail">
+        <tr><th>Company Name</th><td>{{posts.companyName}}</td></tr>
+        <tr><th>Salary For Freshers</th><td>{{posts.salaryForFreshers}}</td></tr>
+        <tr><th>Glass Door Rating(5)</th><td>{{posts.glassDoorStar}}</td></tr>
+        <tr><th>Location</th><td>{{posts.location}}</td></tr>
+        <tr><th>Number Of Rounds</th><td>{{posts.numberOfRounds}}</td></tr>
+        <tr><th>Interview Process</th><td [innerHtml]=posts.process></td></tr>
+        <tr><th>Pro Reviews</th><td  [innerHtml]=posts.proReviews></td></tr>
+        <tr><th>Con Reviews</th><td  [innerHtml]=posts.conReviews></td></tr>
+        <tr><th>Recruitment Season</th><td>{{posts.recruitmentSeason}}</td></tr>
+        <tr><th>Roles they Offer Frequently</th><td>{{posts.rolesTheyOffer}}</td></tr>
+        <tr><th>Skills To Have</th><td  [innerHtml]=posts.skillsToHave></td></tr>
+        <tr><th>Url</th><td>{{posts.url}}</td></tr>
+        </table>
+        </mat-card>
+        </div>
+        </section>

@@ -1,0 +1,36 @@
+.header
+{
+    text-align: center;
+    border: 2px solid yellowgreen;
+    width: 80%;
+    margin-left: 10%;
+    color:darkblue;
+    background-color:cornsilk;
+}
+.companies-list
+{
+    text-align: center;
+    margin: auto;
+    margin-top: 60px;
+}
+th,td{
+    width: 50%;
+}
+.list{
+    width: 80%;
+    margin: auto;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

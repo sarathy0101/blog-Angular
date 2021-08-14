@@ -1,32 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/auth.service';
-import { PostsService } from '../posts.service';
+import { PostsService } from '../../posts/posts.service';
 import {AngularFireStorage} from '@angular/fire/storage'
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 @Component({
-  selector: 'app-post-dashboard',
-  templateUrl: './post-dashboard.component.html',
-  styleUrls: ['./post-dashboard.component.css']
+  selector: 'app-resume-verify',
+  templateUrl: './resume-verify.component.html',
+  styleUrls: ['./resume-verify.component.css']
 })
-export class PostDashboardComponent implements OnInit {
+export class ResumeVerifyComponent implements OnInit {
 
   merchantForm:FormGroup;
   statusOfPost:string ="";
   uploadImagePercent?:Observable<any>;
   downloadUrl?:Observable<any>;
   image:string='';
-  constructor(private auth:AuthService,private postService:PostsService,private storage:AngularFireStorage) {
-
+  constructor(private auth:AuthService,private postService:PostsService,private storage:AngularFireStorage) { 
     this.merchantForm = new FormGroup({
-      title: new FormControl("",[Validators.required, Validators.minLength(10)]),
-      content: new FormControl("",[Validators.required, Validators.minLength(10)])
+      title: new FormControl("",[Validators.required, Validators.email])
     });
-   }
-  
-  ngOnInit(): void {
   }
+
+  ngOnInit(): void {
+    
+  }
+  
   isValid()
   {
     if(this.merchantForm?.value.title.length>10 && this.merchantForm.value.content.length>10)
@@ -129,4 +129,5 @@ export class PostDashboardComponent implements OnInit {
     }, 3000);
 
   }
-  }
+
+}

@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore'
-import {Posts} from './posts.model';
 @Injectable({
   providedIn: 'root'
 })
 
-export class PostsService {
+export class InterviewprocessService {
   constructor(private afs:AngularFirestore) { 
     
     
   }
     getPosts(){
-     return this.afs.collection('blog',ref=>
+     return this.afs.collection('interviewProcess',ref=>
       ref.orderBy('published','desc')
       ).snapshotChanges()
       
     }
     getPostData(id:string)
     {
-      return this.afs.doc<Posts>(`blog/${id}`).valueChanges()
+      return this.afs.doc(`interviewProcess/${id}`).valueChanges()
     }
     create(data:any)
     {

@@ -1,0 +1,24 @@
+<p>resume-verify works!</p>
+<section>
+    <div>
+        <input type="file" id="file" (change)="uploadImage($event)">
+        <br>
+        <div [hidden]='!uploadImagePercent'>
+    <mat-progress-bar mode="determinate" value='{{uploadImagePercent | async }}'>{{uploadImagePercent | async}}</mat-progress-bar>
+    <p>{{uploadImagePercent | async}} % uploaded</p>
+        </div>
+        
+    </div>
+    <br>
+    <div [hidden]=!image>
+        <img src="{{image}}" alt="img to be attached ">
+    </div>
+<form [formGroup]="merchantForm">
+<mat-form-field>
+    <input matInput placeholder="Enter Title" formControlName="email">
+    <mat-error *ngIf='checkError("email")'>Title should be >10</mat-error>
+</mat-form-field>
+<br>
+<button mat-raised-button color="accent"   [disabled]="!isValid()"> Create Post</button>
+</form>
+</section>

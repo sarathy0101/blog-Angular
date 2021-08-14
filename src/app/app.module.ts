@@ -14,11 +14,16 @@ import {environment} from '../environments/environment';
 import { PostsModule } from './posts/posts.module'
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
+
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ResumesModule } from './resumes/resumes.module';
+import { InterviewprocessModule } from './interviewprocess/interviewprocess.module';
+
+
 const routes:Routes=[
   {
     path:'',redirectTo:'/blog',pathMatch:'full'
-  },
-  {path:'',loadChildren:'./posts/posts.module#PostsModule'}
+  }
 ]
 
 @NgModule({
@@ -26,12 +31,13 @@ const routes:Routes=[
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    
+    NgxPaginationModule,
     AppRoutingModule,BrowserAnimationsModule,RouterModule.forRoot(routes),
     CoreModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,AngularFireStorageModule,AngularFirestoreModule, PostsModule,FormsModule,ReactiveFormsModule
+    AngularFireAuthModule,AngularFireStorageModule,AngularFirestoreModule, PostsModule,FormsModule,NgxPaginationModule,ReactiveFormsModule, ResumesModule, InterviewprocessModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

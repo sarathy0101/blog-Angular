@@ -1,0 +1,42 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    
+  }
+  
+  tr:nth-child(even) {
+    background-color: #89a4cc;
+    color: rgb(233, 44, 154);
+  }
+  tr:nth-child(odd) {
+    background-color: #ffaee0;
+    color: rgb(71, 16, 223);
+  }
+  th,td{
+    width: 50%;
+    
+    border: 2px solid #fff;
+    padding: 8px;
+    word-wrap: break-word;
+}
+.companies-detail
+{
+    text-align: center;
+    margin: auto;
+    margin-top: 60px;
+}
+.detail{
+    width: 80%;
+    margin: auto;
+}
+.header
+{
+    text-align: center;
+    border: 2px solid yellowgreen;
+    width: 70%;
+    margin-left: 15%;
+    color:rgb(247, 0, 144);
+    background-color:cornsilk;
+}

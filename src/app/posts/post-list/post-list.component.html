@@ -1,8 +1,18 @@
-<p>post-list workss!</p>
 
-    <div *ngFor="let post of posts">
-        <h2 routerLink="{{post.id}}">{{post.data.title}}</h2>
-        <p>{{post.data.content}}</p>
-        <p>{{post.data.published}}</p>
-    </div>
-    
+    <section >
+        <iframe data-aa="1661268" src="//acceptable.a-ads.com/1661268" scrolling="no" style="border:0px; padding:0; width:100%; height:100%; overflow:hidden" allowtransparency="true"></iframe>
+        <mat-card *ngFor="let post of posts | slice: lowValue : highValue ">
+            <mat-card-content >
+                <img src={{post.data.image}} alt="{{post.data.title}}">
+                <p align="end"> <mat-icon class="visibleIcon">visibility</mat-icon><sup >{{post.data.views}}</sup></p>
+                <h2  routerLink="{{post.id}}">{{post.data.title}}</h2>
+                <p><small>Posted by {{post.data.author}} &bull; on {{post.data.published.toDate() | date:'dd/MM/YYYY h:mm:ss a'}}</small></p>
+            </mat-card-content>
+                   
+                
+        </mat-card>
+        </section>
+        <iframe data-aa="1661268" src="//acceptable.a-ads.com/1661268" scrolling="no" style="border:0px; padding:0; width:100%; height:100%; overflow:hidden" allowtransparency="true"></iframe>
+    <mat-paginator [length]=totalLists (page)="getPaginatorData($event)" [pageSize]="12" [pageSizeOptions]=[12,16,24,36] >
+    </mat-paginator>
+    <iframe data-aa="1661268" src="//acceptable.a-ads.com/1661268" scrolling="no" style="border:0px; padding:0; width:100%; height:100%; overflow:hidden" allowtransparency="true"></iframe>

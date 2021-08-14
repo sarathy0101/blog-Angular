@@ -1,6 +1,48 @@
-<p>post-detail works!</p>
-<div *ngIf="posts">
+<meta property="og:title" content="Colby Fayock - A UX Designer &amp; Front-end Developer Blog" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/static/website-social-card-44070c4a901df708aa1563ac4bbe595a.jpg" />
+<meta property="og:url" content="https://www.colbyfayock.com" />
+<div>
+<mat-card *ngIf="posts" >
+    <iframe data-aa="1661268" src="//acceptable.a-ads.com/1661268" scrolling="no" style="border:0px; padding:0; width:100%; height:100%; overflow:hidden" allowtransparency="true"></iframe>
+   <h1>{{posts.title}}<mat-icon  class="shareIcon"  (click)=share()>share</mat-icon></h1>
+   <img src="{{posts.image}}" alt="{{posts.title}}" class="companyImage">
+   <p>published by {{posts.author}} &bull; {{posts.published.toDate() | date:'dd/MM/YYYY h:mm:ss a'}} </p>
+   
    <h3>{{posts.title}}</h3>
-   <p>{{posts.content}}</p>
-   <p>published by {{posts.published.toDate() | date:'dd/MM/YYYY h:mm:ss a'}} </p>
+  <div [innerHtml]=posts.content></div>
+   <h3>Please Click the below ad to give creator a credit.</h3>
+   <iframe data-aa="1661268" src="//acceptable.a-ads.com/1661268" scrolling="no" style="border:0px; padding:0; width:100%; height:100%; overflow:hidden" allowtransparency="true"></iframe>
+   <p align="end">
+       <mat-icon class="visibleIcon" *ngIf='!isLiked' (click)="isLiked=true;updateLikes()">thumb_up</mat-icon>
+       <mat-icon class="visibleIcon" style="color: blue;" *ngIf='isLiked' >thumb_up</mat-icon>
+       <sup >{{posts.likes}}</sup> &nbsp;&nbsp;
+       <mat-icon class="visibleIcon">visibility</mat-icon>
+       <sup >{{posts.views}}</sup>
+    </p>
+</mat-card>
+<iframe data-aa="1661268" src="//acceptable.a-ads.com/1661268" scrolling="no" style="border:0px; padding:0; width:100%; height:100%; overflow:hidden" allowtransparency="true"></iframe>
+<section class="comment">
+    <h3>Enter Your Comments:<span style="color:red">(Admin can only delete!)</span></h3>
+    <form [formGroup]="commentForm">
+    <mat-form-field>
+        <input matInput placeholder="Enter Your Name to display" formControlName="name" >
+        <mat-error *ngIf='checkError("name")'>Name should not be empty </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <textarea matInput placeholder="Enter Comment" formControlName="comment" rows=""></textarea>
+        <mat-error *ngIf='checkError("comment")'>Content length should not be empty </mat-error>
+    </mat-form-field><br>
+    <button mat-raised-button color="accent" (click)=addComment()   [disabled]="!isValid()">{{statusComment}}</button>
+    </form>
+    
+    </section>
+    <div *ngIf="posts">
+        
+    <section class="commentChats"  *ngFor="let comment of posts.comments" >
+        <p class="commenterName"><mat-icon>account_circle</mat-icon><span><sup>&nbsp;{{comment.name}}&nbsp;&nbsp; {{comment.time.toDate() | date:'dd/MM/YYYY h:mm:ss a '}} </sup></span></p>
+        <p>{{comment.comment}}</p>
+    </section>
+    </div>
 </div>
